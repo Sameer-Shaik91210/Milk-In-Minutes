@@ -1,0 +1,30 @@
+.order-view {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+/* Styling the card which consists both product and form */
+.order-view-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  height: fit-content;
+  width: 90%;
+  margin: auto;
+}
+.product {
+  width: 50%;
+  margin: auto;
+}
+
+.divider {
+  color: white;
+}
+
+.placeOrder {
+  width: 50%;
+  margin: auto;
+
+  /* background: red; */
+}

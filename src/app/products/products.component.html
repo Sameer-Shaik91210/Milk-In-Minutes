@@ -1,0 +1,17 @@
+<div class="products">
+  <div class="products-search-filter">
+    <app-search (searchTextEmitter)="onSearch($event)"></app-search>
+    <app-filter (selectedEmitter)="onSelectingCategory($event)"></app-filter>
+  </div>
+  <div class="products-container">
+    <app-product
+      *ngFor="let product of tempProducts"
+      [productName]="product.productName"
+      [imagePath]="product.imagePath"
+      [id]="product.id"
+      [price]="product.price"
+      [category]="product.category"
+      [description]="product.description"
+    ></app-product>
+  </div>
+</div>

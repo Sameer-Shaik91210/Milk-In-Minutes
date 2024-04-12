@@ -1,0 +1,124 @@
+{
+  "dairyProducts": [
+    {
+      "id": 1,
+      "productName": "Whole Milk",
+      "imagePath": "assets/images/whole_milk.jpeg",
+      "price": 223.58,
+      "category": "milk",
+      "description": "Whole Milk is a nutritious dairy product that is rich in calcium and vitamins. It has a creamy texture and full-bodied flavor, making it ideal for drinking on its own or using in various recipes like smoothies, cereals, and desserts."
+    },
+    {
+      "id": 2,
+      "productName": "Cheddar Cheese",
+      "imagePath": "assets/images/cheddar_cheese.jpeg",
+      "price": 334.56,
+      "category": "cheese",
+      "description": "Cheddar Cheese is a classic cheese known for its sharp, tangy flavor and smooth texture. It's versatile, perfect for melting on sandwiches, grating over pasta, or simply enjoying as a snack with crackers and fruit."
+    },
+    {
+      "id": 3,
+      "productName": "Unsalted Butter",
+      "imagePath": "assets/images/unsalted_butter.jpeg",
+      "price": 282.71,
+      "category": "butter",
+      "description": "Unsalted Butter is a staple in baking and cooking, prized for its rich, creamy taste and smooth consistency. It adds richness to recipes without overpowering other flavors and is perfect for making pastries, sauces, and sautéing vegetables."
+    },
+    {
+      "id": 4,
+      "productName": "Greek Yogurt",
+      "imagePath": "assets/images/greek_yogurt.jpeg",
+      "price": 149.54,
+      "category": "yogurt",
+      "description": "Greek Yogurt is a thick, creamy yogurt with a rich, tangy taste. It's strained to remove excess whey, resulting in a higher protein content and thicker texture compared to regular yogurt. Enjoy it on its own, with fruit, or as a topping for savory dishes."
+    },
+    {
+      "id": 5,
+      "productName": "Skim Milk",
+      "imagePath": "assets/images/skim_milk.jpeg",
+      "price": 186.93,
+      "category": "milk",
+      "description": "Skim Milk is a low-fat dairy option that provides essential nutrients like calcium and vitamin D without the added fat. It has a light, refreshing taste and is perfect for those looking to reduce their calorie intake while still enjoying the benefits of milk in their diet."
+    },
+    {
+      "id": 6,
+      "productName": "Mozzarella Cheese",
+      "imagePath": "assets/images/mozzarella_cheese.jpeg",
+      "price": 299.82,
+      "category": "cheese",
+      "description": "Mozzarella Cheese is a mild, creamy cheese with a slightly elastic texture. It's beloved for its meltability, making it perfect for pizzas, lasagnas, and caprese salads. With its delicate flavor and stretchy consistency, it's a versatile addition to any kitchen."
+    },
+    {
+      "id": 7,
+      "productName": "Salted Butter",
+      "imagePath": "assets/images/salted_butter.jpeg",
+      "price": 282.71,
+      "category": "butter",
+      "description": "Salted Butter is a flavorful dairy product with a perfect balance of creamy sweetness and salty tang. It's ideal for spreading on toast, sautéing vegetables, or adding richness to baked goods. Enhance the flavor of your favorite dishes with this versatile kitchen staple."
+    },
+    {
+      "id": 8,
+      "productName": "Strawberry Yogurt",
+      "imagePath": "assets/images/strawberry_yogurt.jpeg",
+      "price": 149.54,
+      "category": "yogurt",
+      "description": "Strawberry Yogurt is a deliciously fruity yogurt with the natural sweetness of ripe strawberries. Creamy and smooth, it's a delightful snack or breakfast option packed with calcium and probiotics. Enjoy it on its own or mixed with granola and fresh fruit for a wholesome treat."
+    },
+    {
+      "id": 9,
+      "productName": "Almond Milk",
+      "imagePath": "assets/images/almond_milk.jpeg",
+      "price": 245.78,
+      "category": "milk",
+      "description": "Almond Milk is a creamy, dairy-free alternative made from almonds and water. It's naturally lactose-free and low in calories, making it suitable for those with dietary restrictions or looking to reduce their dairy intake. Enjoy its nutty flavor in smoothies, cereal, or coffee."
+    },
+    {
+      "id": 10,
+      "productName": "Blue Cheese",
+      "imagePath": "assets/images/blue_cheese.jpeg",
+      "price": 448.77,
+      "category": "cheese",
+      "description": "Blue Cheese is a bold and pungent cheese with characteristic blue veins running throughout. Its distinct flavor profile ranges from tangy to sharp, with a creamy texture that crumbles easily. Enjoy it on salads, steaks, or paired with fruits and honey for a gourmet experience."
+    },
+    {
+      "id": 11,
+      "productName": "Whipped Butter",
+      "imagePath": "assets/images/whipped_butter.jpeg",
+      "price": 320.61,
+      "category": "butter",
+      "description": "Whipped Butter is a light and airy version of traditional butter, making it easy to spread straight from the fridge. With its fluffy texture and creamy taste, it's perfect for topping toast, muffins, or pancakes. Experience the convenience and indulgence of whipped butter in your favorite recipes."
+    },
+    {
+      "id": 12,
+      "productName": "Vanilla Yogurt",
+      "imagePath": "assets/images/vanilla_yogurt.jpeg",
+      "price": 149.54,
+      "category": "yogurt",
+      "description": "Vanilla Yogurt is a creamy and indulgent treat with the aromatic sweetness of vanilla beans. It's perfect for breakfast, dessert, or as a base for smoothies. Packed with probiotics and calcium, it's a delicious way to support gut health and satisfy your sweet cravings."
+    },
+    {
+      "id": 13,
+      "productName": "Coconut Milk",
+      "imagePath": "assets/images/coconut_milk.jpeg",
+      "price": 261.11,
+      "category": "milk",
+      "description": "Coconut Milk is a rich and creamy dairy alternative made from the flesh of mature coconuts. It adds a tropical twist to both sweet and savory dishes, from curries to desserts. Enjoy its distinctive flavor and smooth texture in your favorite recipes."
+    },
+    {
+      "id": 14,
+      "productName": "Feta Cheese",
+      "imagePath": "assets/images/feta_cheese.jpeg",
+      "price": 366.35,
+      "category": "cheese",
+      "description": "Feta Cheese is a crumbly, tangy cheese with a salty flavor and creamy texture. It's perfect for salads, pastas, and Mediterranean dishes. Add a burst of flavor to your meals with this versatile cheese."
+    },
+    {
+      "id": 15,
+      "productName": "Ghee",
+      "imagePath": "assets/images/ghee.jpeg",
+      "price": 401.03,
+      "category": "butter",
+      "description": "Ghee is a clarified butter with a rich, nutty flavor and high smoke point. It's commonly used in Indian cuisine for frying, sautéing, and flavoring dishes. With its aromatic taste and smooth texture, it adds depth and richness to both sweet and savory recipes."
+    }
+  ]
+}

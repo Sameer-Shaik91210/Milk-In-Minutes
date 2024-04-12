@@ -1,0 +1,22 @@
+<div class="order-view">
+  <div class="order-view-card">
+    <div class="product">
+      <app-product
+        [productName]="dairyProduct.productName"
+        [imagePath]="dairyProduct.imagePath"
+        [id]="dairyProduct.id"
+        [price]="dairyProduct.price"
+        [category]="dairyProduct.category"
+        [description]="dairyProduct.description"
+        [isItOrderView]="true"
+      ></app-product>
+    </div>
+    <mat-divider class="divider" [vertical]="true"></mat-divider>
+    <div class="placeOrder">
+      <app-place-order
+        [productData]="dairyProduct"
+        (orderStatusEmitter)="onOrder($event)"
+      ></app-place-order>
+    </div>
+  </div>
+</div>

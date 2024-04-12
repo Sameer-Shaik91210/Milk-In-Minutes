@@ -1,0 +1,10 @@
+.products-container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.products-search-filter {
+  display: flex;
+  justify-content: space-between;
+}

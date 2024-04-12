@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* Sidenav Container */
+.sidenav-container {
+  height: 100%;
+  background: rgb(240 246 245);
+}
+
+/* Toolbar */
+.mat-toolbar {
+  color: black;
+  background-color: white;
+  height: 10%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-toolbar-content {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.title {
+  font-size: 25px;
+}
+a {
+  text-decoration: none;
+  color: rgb(0 184 108);
+  font-weight: bold;
+}
+/* Navar Items */
+.nav-items {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+}
+
+.nav-items > a {
+  width: fit-content;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.nav-items a span {
+  font-size: 20px;
+  font-weight: 550;
+  color: black; /* Default font color */
+  text-decoration: none; /* Remove underline from links */
+  transition: color 0.3s; /* Smooth transition for font color */
+}
+
+.nav-items a span:hover {
+  color: rgb(0 184 108);
+}
+
+.nav-items > .login {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}

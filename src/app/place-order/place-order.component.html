@@ -1,0 +1,102 @@
+<form class="form" (ngSubmit)="onSubmit()" [formGroup]="orderForm">
+  <div class="backColor">
+    <!-- Name -->
+    <mat-form-field id="name">
+      <input matInput placeholder="Name" type="text" formControlName="name" />
+      <mat-error *ngIf="name?.errors?.['required']">
+        Name is required.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Email -->
+    <mat-form-field id="email">
+      <input matInput placeholder="Email" type="text" formControlName="email" />
+      <mat-error *ngIf="email?.errors?.['required']"
+        >Email is Required</mat-error
+      >
+      <mat-error *ngIf="email?.errors?.['email']">Email is invalid</mat-error>
+    </mat-form-field>
+
+    <!-- Phone -->
+    <mat-form-field id="phone">
+      <input
+        matInput
+        type="text"
+        placeholder="Phone Number"
+        formControlName="phone"
+      />
+      <mat-error *ngIf="phone?.errors?.['pattern']">
+        Valid phone number contains 10 digits starting with 7/8/9
+      </mat-error>
+    </mat-form-field>
+
+    <!-- House No and Street-->
+    <mat-form-field id="houseNoStreet">
+      <input
+        matInput
+        type="text"
+        placeholder="House No and Street"
+        formControlName="houseNoStreet"
+      />
+    </mat-form-field>
+
+    <!-- City and State-->
+    <mat-form-field id="cityState">
+      <input
+        matInput
+        type="text"
+        placeholder="City and State"
+        formControlName="cityState"
+      />
+    </mat-form-field>
+
+    <!-- Zipcode -->
+    <mat-form-field id="zip">
+      <input
+        matInput
+        type="text"
+        placeholder="Zip Code"
+        formControlName="zipcode"
+      />
+      <mat-error *ngIf="orderForm.get('zipcode')?.errors?.['pattern']"
+        >Invalid ZipCode</mat-error
+      >
+    </mat-form-field>
+    <div class="buttons">
+      <button type="reset">Reset</button>
+
+      <div class="quantity">
+        <div mat-icon-button (click)="decrementQuantity()">-</div>
+
+        <input
+          matInput
+          type="number"
+          formControlName="quantity"
+          (change)="calculateTotalPrice()"
+        />
+
+        <div mat-icon-button (click)="incrementQuantity()">+</div>
+      </div>
+
+      <button
+        color="warn"
+        mat-raised-button
+        [disabled]="!orderForm.valid"
+        type="submit"
+      >
+        Place Order
+      </button>
+    </div>
+    <div
+      *ngIf="
+        orderForm.controls.quantity.invalid && orderForm.controls.quantity.dirty
+      "
+      class="error-message"
+    >
+      Please enter a valid quantity.
+    </div>
+    <div class="total-price">Total Price: {{ totalPrice | currency }}</div>
+
+    <!-- <p>Order Details :{{ orderForm.value | json }}</p> -->
+  </div>
+</form>

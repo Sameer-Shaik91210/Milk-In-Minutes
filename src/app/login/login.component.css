@@ -1,0 +1,19 @@
+/* login.component.css */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.login-card {
+  width: 300px;
+}
+
+mat-card-title {
+  text-align: center;
+}
+
+mat-card-actions {
+  justify-content: center;
+}
