@@ -12,4 +12,5 @@ export type order = {
   cityState: string;
   zipcode: string;
   quantity: number;
+  totalPrice: number;
 };

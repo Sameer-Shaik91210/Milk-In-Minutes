@@ -3,6 +3,7 @@
     <app-search (searchTextEmitter)="onSearch($event)"></app-search>
     <app-filter (selectedEmitter)="onSelectingCategory($event)"></app-filter>
   </div>
+  <div class="noResults" *ngIf="noResults">No Results!! Check Search text.</div>
   <div class="products-container">
     <app-product
       *ngFor="let product of tempProducts"

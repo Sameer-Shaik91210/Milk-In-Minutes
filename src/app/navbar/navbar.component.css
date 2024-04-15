@@ -1,49 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
-/* Sidenav Container */
-.sidenav-container {
-  height: 100%;
-  background: rgb(240 246 245);
-}
-
-/* Toolbar */
-.mat-toolbar {
+/* app.navbar.css */
+.toolbar {
   color: black;
   background-color: white;
-  height: 10%;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
+  border-bottom: 1px solid rgb(0 184 108);
 }
 
 .mat-toolbar-content {
-  width: 80%;
+  width: 90%; /* Adjusted for smaller screens */
   margin: auto;
   display: flex;
   align-items: center;
-  position: relative;
+  justify-content: space-between; /* To evenly distribute content */
 }
-.title {
-  font-size: 25px;
-}
-a {
+
+.title > a {
   text-decoration: none;
   color: rgb(0 184 108);
+  font-size: 25px;
   font-weight: bold;
+  letter-spacing: 1.5px;
 }
-/* Navar Items */
+
 .nav-items {
   display: flex;
   justify-content: space-evenly;
-  width: 80%;
-  margin: auto;
+  width: 50%; /* Adjusted for smaller screens */
 }
 
 .nav-items > a {
-  width: fit-content;
+  text-decoration: none;
   font-weight: bold;
   font-size: 20px;
   border-radius: 10px;
@@ -52,17 +43,10 @@ a {
 .nav-items a span {
   font-size: 20px;
   font-weight: 550;
-  color: black; /* Default font color */
-  text-decoration: none; /* Remove underline from links */
-  transition: color 0.3s; /* Smooth transition for font color */
+  color: black;
+  transition: color 0.3s;
 }
 
 .nav-items a span:hover {
   color: rgb(0 184 108);
-}
-
-.nav-items > .login {
-  position: absolute;
-  top: 15px;
-  right: 10px;
 }

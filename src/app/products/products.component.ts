@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DairyService } from '../services/dairy.service';
 import { dairyProduct } from '../models/dairyProduct';
+import { RouteService } from '../services/route.service';
 
 @Component({
   selector: 'app-products',
@@ -8,8 +9,12 @@ import { dairyProduct } from '../models/dairyProduct';
   styleUrl: './products.component.css',
 })
 export class ProductsComponent {
-  constructor(private dairyService: DairyService) {}
+  constructor(
+    private dairyService: DairyService,
+    private routeService: RouteService
+  ) {}
 
+  noResults: boolean = false;
   dairyProducts: Array<dairyProduct> = [];
   tempProducts: Array<dairyProduct> = this.dairyProducts;
 
@@ -23,6 +28,8 @@ export class ProductsComponent {
         console.log(this.dairyProducts);
       },
       error: (err: any) => {
+        this.routeService.navigateToLoadingErrorPage();
+
         alert(`Error fetching details!${err}`);
       },
     });
@@ -39,14 +46,22 @@ export class ProductsComponent {
   }
 
   onSearch(searchText: any) {
-    console.log('onSearch of home coponent is getting executed!');
-    this.tempProducts =
-      searchText === ''
-        ? this.dairyProducts
-        : this.dairyProducts.filter((product) =>
-            product.productName
-              .toLowerCase()
-              .startsWith(searchText.toLowerCase())
-          );
+    console.log('onSearch of home component is getting executed!');
+
+    if (searchText === '') {
+      this.tempProducts = this.dairyProducts;
+    } else {
+      let filteredProducts = this.dairyProducts.filter((product) =>
+        product.productName.toLowerCase().includes(searchText.toLowerCase())
+      );
+
+      if (filteredProducts.length === 0) {
+        this.tempProducts = filteredProducts;
+        this.noResults = true;
+      } else {
+        this.tempProducts = filteredProducts;
+        this.noResults = false;
+      }
+    }
   }
 }

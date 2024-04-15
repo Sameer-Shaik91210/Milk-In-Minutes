@@ -1,18 +1,18 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar class="toolbar" color="primary">
       <div class="mat-toolbar-content">
-        <div class="title"><a routerLink="/home">Milk-In-Minutes</a></div>
+        <div class="title"><a routerLink="">Milk-In-Minutes</a></div>
 
         <mat-nav-list class="nav-items">
-          <a routerLink="/products" routerLinkActive="active"
+          <!-- <a routerLink="/products" routerLinkActive="active"
             ><span>Products</span></a
-          >
+          > -->
           <!-- <a  routerLink="/orderView" routerLinkActive="active"
             ><span>Order View Page</span></a
           > -->
-          <a routerLink="/dairy-product-requests" routerLinkActive="active"
-            ><span>Dairy Product Requests</span></a
+          <a routerLink="/dairy-product-orders" routerLinkActive="active"
+            ><span>Admin</span></a
           >
           <!-- <a
             class="login"
@@ -24,11 +24,5 @@
         </mat-nav-list>
       </div>
     </mat-toolbar>
-
-    <!-- Add Content Here -->
-    <router-outlet></router-outlet>
-
-    <!-- Footer Here -->
-    <app-footer></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

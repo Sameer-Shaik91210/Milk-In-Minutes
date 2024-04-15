@@ -1,63 +1,64 @@
 .product-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Change to column for responsiveness */
   width: 90%;
-  margin: 20px;
+  margin: 20px auto; /* Center the card */
   padding: 25px;
   border-radius: 10px;
   box-shadow: 5px 5px 20px rgb(0 184 108);
   font-family: "Poppins", sans-serif;
 }
+
 .product-card img {
-  float: left;
-  width: 200px;
+  width: fit-content; /* Adjust to full width */
   height: auto;
-  min-height: 250px;
-  border-radius: 50%;
+  border-radius: 10px 10px 0 0; /* Adjust border radius */
 }
 
 /* title style rules */
 h1 {
-  font-size: 30px;
+  font-size: 24px; /* Adjust font size */
+  margin-top: 15px; /* Add margin top */
 }
+
 /* description style rules */
 .desc {
   color: rgb(151, 150, 150);
   font-weight: bold;
   letter-spacing: 1.5px;
-  font-size: 18px;
-  line-height: 1.2rem;
+  font-size: 16px; /* Adjust font size */
+  margin-top: 10px; /* Add margin top */
 }
 
 /* price style rules */
 .price {
   font-weight: bold;
-  font-size: 23px;
-  margin: 20px 0px;
+  font-size: 20px; /* Adjust font size */
+  margin: 10px 0; /* Adjust margin */
 }
 
 /* category style rules */
 .category {
   background-color: rgb(233, 236, 235);
   border-radius: 5px;
-  padding: 10px;
-  font-size: 15px;
-  border: none;
-  letter-spacing: 2px !important;
+  padding: 8px;
+  font-size: 14px; /* Adjust font size */
+  letter-spacing: 1px;
   font-weight: bold;
-  margin-left: 20px;
+  margin-top: 10px; /* Add margin top */
+  text-align: center; /* Center align */
 }
 
 /* buy style rules */
-
 .buy {
-  width: 48%;
+  width: 100%; /* Adjust to full width */
   background-color: rgb(0 184 108);
   border-radius: 10px;
-  padding: 10px;
-  font-size: 22px;
+  padding: 12px;
+  font-size: 18px; /* Adjust font size */
   color: white;
   border: none;
   font-weight: bolder;
   cursor: pointer;
+  margin-top: 15px; /* Add margin top */
 }

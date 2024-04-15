@@ -1,10 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { OrdersService } from '../services/orders.service';
 import { dairyProduct } from '../models/dairyProduct';
@@ -15,15 +10,12 @@ import { order } from '../models/order';
   templateUrl: './place-order.component.html',
   styleUrls: ['./place-order.component.css'],
 })
-export class PlaceOrderComponent {
-  ngOnInit(): void {}
-
+export class PlaceOrderComponent implements OnInit {
   isOrderPlaced: boolean = false;
-  totalPrice: number = 0;
-  quantity: number = 1;
 
   orderDetails = {};
 
+  ngOnInit() {}
   @Input()
   productData: dairyProduct = {
     id: 0,
@@ -47,11 +39,30 @@ export class PlaceOrderComponent {
     name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
     phone: ['', [Validators.pattern(/^[7-9]\d{9}$/)]],
-    houseNoStreet: [''],
-    cityState: [''],
-    zipcode: ['', [Validators.pattern(/^\d{5}(?:\d{1})?$/)]],
-    quantity: [1, Validators.min(1)],
+    houseNoStreet: ['', Validators.required],
+    cityState: ['', Validators.required],
+    zipcode: [
+      '',
+      [Validators.required, Validators.pattern(/^\d{5}(?:\d{1})?$/)],
+    ],
+    quantity: [0, [Validators.required, Validators.min(1)]],
+    totalPrice: [this.productData.price],
   });
+
+  get houseNoStreet() {
+    return this.orderForm.get('houseNoStreet');
+  }
+
+  get quantity() {
+    return this.orderForm.get('quantity');
+  }
+  get cityState() {
+    return this.orderForm.get('cityState');
+  }
+
+  get totalPrice() {
+    return this.orderForm.get('totalPrice');
+  }
 
   get name() {
     return this.orderForm.get('name');
@@ -69,32 +80,27 @@ export class PlaceOrderComponent {
     return this.orderForm.get('zipcode');
   }
 
-  // Increment quantity
-  incrementQuantity() {
-    this.quantity++;
+  ngAfterViewInit(): void {
     this.calculateTotalPrice();
+    console.log('total Price', this.orderForm.get('totalPrice')?.value);
   }
 
-  // Decrement quantity
-  decrementQuantity() {
-    if (this.quantity > 1) {
-      this.quantity--;
-      this.calculateTotalPrice();
-    }
-  }
-
-  // Calculate total price
+  // Calculate Total Price
   calculateTotalPrice() {
-    this.totalPrice = this.quantity * this.productData.price;
+    const quantity = this.orderForm.get('quantity')?.value;
+    console.log('quantity', quantity);
+    const price = this.productData.price;
+    console.log('price', price);
+    const totalPrice = <number>quantity > 0 ? <number>quantity * price : 0;
+    this.orderForm.patchValue({ totalPrice: totalPrice }); // Update totalPrice control value
   }
 
   onSubmit(): void {
     console.log(this.orderForm.value);
-    this.orderStatusEmitter.emit(this.isOrderPlaced);
     this.isOrderPlaced = true;
+    this.orderStatusEmitter.emit(this.isOrderPlaced);
     this.orderDetails = this.orderForm.value;
     this.saveOrder(this.makeOrderObject(this.productData, this.orderDetails));
-    this.orderForm.reset();
   }
 
   makeOrderObject(product: dairyProduct, order: any): order {
@@ -108,7 +114,8 @@ export class PlaceOrderComponent {
       houseNoStreet: order.houseNoStreet,
       cityState: order.cityState,
       zipcode: order.zipcode,
-      quantity: this.quantity,
+      quantity: order.quantity,
+      totalPrice: order.totalPrice,
     };
   }
 

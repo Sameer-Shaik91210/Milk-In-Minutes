@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { order } from '../models/order';
 import { OrdersService } from '../services/orders.service';
+import { RouteService } from '../services/route.service';
 
 @Component({
   selector: 'app-dairy-product-requests',
@@ -11,7 +12,8 @@ import { OrdersService } from '../services/orders.service';
 export class DairyProductRequestsComponent implements OnInit {
   constructor(
     private http: HttpClient,
-    private _ordersService: OrdersService
+    private _ordersService: OrdersService,
+    private routeService: RouteService
   ) {}
 
   allOrders: order[] = [];
@@ -19,13 +21,13 @@ export class DairyProductRequestsComponent implements OnInit {
     'productName',
     'productPrice',
     'productCategory',
+    'quantity',
+    'totalPrice',
     'customerName',
     'phone',
     'email',
-    'houseNo',
-    'street',
-    'city',
-    'state',
+    'houseNoStreet',
+    'cityState',
     'zipcode',
   ];
 
@@ -36,7 +38,8 @@ export class DairyProductRequestsComponent implements OnInit {
         console.log('Orders fetching successful!', this.allOrders);
       },
       error: (err) => {
-        alert(`Error while fetching orders data: ${err}`);
+        this.routeService.navigateToLoadingErrorPage();
+        alert(`Error while fetching orders data}`);
       },
     });
   }

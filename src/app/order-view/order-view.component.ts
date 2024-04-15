@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DairyService } from '../services/dairy.service';
 import { dairyProduct } from '../models/dairyProduct';
+import { RouteService } from '../services/route.service';
 
 @Component({
   selector: 'app-order-view',
@@ -13,7 +14,8 @@ export class OrderViewComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private activatedRoute: ActivatedRoute,
-    private dairyService: DairyService
+    private dairyService: DairyService,
+    private routeService: RouteService
   ) {}
 
   isOrderPlaced: boolean = false;
@@ -35,7 +37,9 @@ export class OrderViewComponent implements OnInit {
             this.isOrderPlaced = false;
             this.dairyProduct = data;
           },
-          error: (err) => {},
+          error: (err) => {
+            this.routeService.navigateToLoadingErrorPage();
+          },
         });
       },
     });
@@ -44,12 +48,13 @@ export class OrderViewComponent implements OnInit {
   canDeactivate() {
     if (!this.isOrderPlaced) {
       return (this.isOrderPlaced = confirm(
-        'This page has unsaved changes.Are you sure ,you want to leave?Click Ok .Else ,click Cancel.'
+        'The Order is not yet placed!! Are you sure ,you want to leave?Click Ok .Else ,click Cancel.'
       ));
     } else return this.isOrderPlaced;
   }
 
   onOrder(isOrderPlaced: boolean) {
     this.isOrderPlaced = isOrderPlaced;
+    this.routeService.navigateToProducts();
   }
 }

@@ -1,0 +1,14 @@
+.container {
+  height: 100vh;
+  text-align: center;
+  margin-top: 100px; /* Adjust margin-top to center vertically */
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  color: #666;
+  margin-top: 20px; /* Add spacing between header and paragraph */
+}

@@ -1,30 +1,51 @@
 .order-view {
+  margin-top: 10%;
   display: flex;
-  justify-content: space-between;
-  height: 100%;
-}
-/* Styling the card which consists both product and form */
-.order-view-card {
-  background-color: white;
-  border-radius: 20px;
-  padding: 20px;
-  display: flex;
-  height: fit-content;
-  width: 90%;
-  margin: auto;
-}
-.product {
-  width: 50%;
-  margin: auto;
+  flex-direction: row; /* Adjust to column for smaller screens */
+  align-items: center; /* Center align items */
 }
 
-.divider {
-  color: white;
+.order-view-card {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(0 184 108);
+  border-radius: 20px;
+  padding: 20px;
+  width: 90%;
+  margin: 20px auto; /* Add margin */
+}
+
+.product {
+  width: 48%; /* Adjust to full width */
+  margin-bottom: 20px; /* Add margin bottom */
 }
 
 .placeOrder {
-  width: 50%;
-  margin: auto;
+  width: 48%; /* Adjust to full width */
+}
 
-  /* background: red; */
+.divider {
+  background-color: white; /* Adjust background color */
+  margin: 20px 0; /* Add margin */
+}
+/* For screens smaller than 768px (e.g., smartphones) */
+@media only screen and (max-width: 767px) {
+  .order-view {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .product {
+    width: 100%; /* Adjust to full width */
+    margin-bottom: 20px; /* Add margin bottom */
+  }
+
+  .placeOrder {
+    width: 100%; /* Adjust to full width */
+  }
+  .order-view-card {
+    display: flex;
+    flex-direction: column;
+  }
 }

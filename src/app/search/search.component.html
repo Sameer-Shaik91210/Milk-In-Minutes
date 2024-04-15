@@ -1,11 +1,13 @@
 <div class="search">
+  <!-- Search Field -->
   <mat-form-field class="search-field">
     <input matInput type="text" placeholder="Search" [(ngModel)]="searchText" />
   </mat-form-field>
+
+  <!-- Search buttton -->
   <button
     class="search-button"
     mat-fab
-    color="primary"
     aria-label="Example icon button with a delete icon"
     (click)="onSearch()"
   >
